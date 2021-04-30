@@ -99,10 +99,7 @@ class Parser:
                     GlobalVariable.current_status_company.append({"id": raw["id"], "name": raw["name"], "status": raw["activeReports"]})
         if not GlobalVariable.last_status_company:
             GlobalVariable.last_status_company = GlobalVariable.current_status_company.copy()
-
-        # GlobalVariable.current_status_company.append(
-        #     {"id": 254, "name": "test", "status": 0})
-
+        
         if len(GlobalVariable.current_status_company) > len(GlobalVariable.last_status_company):
             print("Added New Company for hunters")
             # TODO - send SMS or send email
