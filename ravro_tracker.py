@@ -95,7 +95,7 @@ class Parser:
         for data in self.decode_res:
             for raw in data['data']['companies']['rows']:
                 if raw["activeReports"] == 1:
-                    # print(raw["id"], raw["name"], raw["activeReports"] , "===== ACTIVE COMPANY =====" )
+                    print(raw["id"], raw["name"], raw["activeReports"] , "===== ACTIVE COMPANY =====" )
                     GlobalVariable.current_status_company.append({"id": raw["id"], "name": raw["name"], "status": raw["activeReports"]})
         if not GlobalVariable.last_status_company:
             GlobalVariable.last_status_company = GlobalVariable.current_status_company.copy()
@@ -122,4 +122,6 @@ while 1:
         time.sleep(600) #10 min
         continue
     Parser(get_response).resparser()
-    time.sleep(3)
+    print("@" * 100)
+    time.sleep(10)
+    
